@@ -78,32 +78,45 @@ const landingStyles = theme => ({
             // fontSize: '1.1em'
             // fontStyle: 'italic'
         },
-        // '& strong': {
-        //     color: ' #f49f1c',
-        //     fontStyle: 'normal',
-        //     fontSize: '1.3em'
-        // },
-        '& span': { display: 'block' }
+        [theme.breakpoints.down('sm')]: {
+            marginBottom: '2em',
+            marginLeft: 5,
+            // width: '90%',
+            // margin: 'auto auto' 
+            // minWidth: 600
+        },
+        '& strong': {
+            // color: ' #f49f1c',
+            color: 'red',
+            // fontStyle: 'normal',
+            // fontSize: '1.3em',
+            // paddingBottom: '0.1em',
+            padding: '0.1em',
+            // border: '2px solid #f49f1c'
+            border: '1px solid #fff'
+        },
+        '& span': { display: 'block', marginTop: '0.5em'}
     },
     optionsLayout: {
 
         width: 600,
         [theme.breakpoints.down('xl')]: {
             // width: '50%'
-            width: 600
+            width: 800
             // minWidth: 200
         },
         [theme.breakpoints.down('lg')]: {
             // width: '50%'
             // minWidth: 600
-            width: 600
+            width: 700
         },
         [theme.breakpoints.down('md')]: {
             // width: '50%'
             width: 600
         },
         [theme.breakpoints.down('sm')]: {
-            width: '90%'
+            width: '90%',
+            margin: 'auto auto'
             // minWidth: 600
         },
         // backgroundColor: ''
