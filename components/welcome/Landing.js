@@ -54,7 +54,7 @@ const Landing = props => {
                                 </Typography>
                             </Box>
                             <Box className={classes.optionsLayout}>
-                                <Typography>what do you want</Typography>
+                                <Typography variant='body1' component='p'>what do you want</Typography>
                                 <Selection />
                             </Box>
                         </Box>

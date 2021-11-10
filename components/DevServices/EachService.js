@@ -30,7 +30,7 @@ const EachService = props => {
     return (
         <ThemeProvider theme={theme}>
             <Grid item xs={12} sm={12} md={6} lg={4} className={classes.gridItem} >
-                <Card className={classes.cardRoot} elevation={0}>
+                <Card className={classes.cardRoot} raised>
                     <Box className={classes.iconContainer}>
                         <Box className={classes.iconBox}>
                             <Avatar className={classes.avatar}>

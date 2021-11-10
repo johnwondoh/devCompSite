@@ -87,6 +87,7 @@ const serviceStyles = theme => ({
     gridItem: {
         // height: '100%'
         display: 'flex',
+        justifyContent: 'center',
         alignItems: 'stretch'
     },
     cardRoot: {
@@ -96,7 +97,7 @@ const serviceStyles = theme => ({
         maxWidth: 430,
         minWidth: 250,
         // border: '1px solid #f49f1c',
-        border: '2px solid #fff',
+        border: '1px solid #fff',
         // borderRadius: 25,
         // margin: 16,
         display: "flex",
@@ -106,8 +107,11 @@ const serviceStyles = theme => ({
         height: '100%',
         // backgroundColor: 'rgba(25,58,75,0.5)',
         // backgroundColor: '#ebebde',
-        backgroundColor: '#4F6272',
-        backgroundColor: '#006C67',
+        // backgroundColor: '#4F6272',
+        // backgroundColor: '#006C67',
+        // backgroundColor: 'rgba(25,58,75, 0.1)',
+        backgroundColor: 'rgba(255,255,255, 0.1)',
+        // backgroundColor: '#303c5d        ',
     },
     iconContainer: {
         // border: '1px solid red',
@@ -115,10 +119,12 @@ const serviceStyles = theme => ({
         minHeight: 70,
         display: 'flex',
         flexDirection: 'rowReverse',
-        justifyContent: 'center'
+        justifyContent: 'center',
+        alignContent: 'center'
     },
     cardContent: {
         color: 'white',
+        paddingLeft: 0,
         '& hr': {
             backgroundColor: 'white',
             height: 1,
@@ -132,7 +138,8 @@ const serviceStyles = theme => ({
     iconBox: {
         // border: '1px solid gray',
         // borderRadius: '50%',
-        marginTop: 35,
+        // marginTop: 35,
+        marginTop: 45,
         // minWidth: 20,
         // maxWidth: 30,
         width: '4vw',
@@ -141,6 +148,7 @@ const serviceStyles = theme => ({
         flexDirection: 'rowReverse',
         justifyContent: 'center',
         alignItems: 'center',
+        alignContent: 'center',
         fontSize: 30,
         color: 'blue'
     },
@@ -148,14 +156,15 @@ const serviceStyles = theme => ({
         // backgroundColor: 'white',
         backgroundColor: 'rgba(255, 255, 255,0.9)',
         // color: 'rgb(252,132,28)'
-        color: 'rgb(16, 21, 235)',
+        // color: 'rgb(16, 21, 235)',
+        color: 'rgb(252,132,28)',
         fontSize: '1em',
         width: 50,
         height: 50,
         // width: theme.spacing(7),
         // height: theme.spacing(7),
         // border: '3px solid lightseagreen',
-        marginRight: 10
+        // marginRight: 10
     },
 
     hexIconBox: {

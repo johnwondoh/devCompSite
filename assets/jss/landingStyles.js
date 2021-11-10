@@ -55,8 +55,15 @@ const landingStyles = theme => ({
         '& h2': {}
     },
     mainContainer: {
+        // height: '100%',
+        // height: '100vh',
+        // verticalAlign: 'middle',
+        // top: '0%',
+        // transform: 'translateY(25%)',
+        marginTop: '3em',
         display: 'flex',
-        justifyContent: 'center'
+        justifyContent: 'center',
+        // alignItems: 'stretch'
     },
     mainContent: {
         // margin: 'auto auto',
@@ -87,18 +94,22 @@ const landingStyles = theme => ({
         },
         '& strong': {
             // color: ' #f49f1c',
-            color: 'red',
+            // color: 'red',
             // fontStyle: 'normal',
             // fontSize: '1.3em',
             // paddingBottom: '0.1em',
             padding: '0.1em',
             // border: '2px solid #f49f1c'
-            border: '1px solid #fff'
+            border: '1px solid #937047'
+            // border: '1px solid #e7dac7'
         },
         '& span': { display: 'block', marginTop: '0.5em'}
     },
     optionsLayout: {
-
+        '& p': {
+            color: '#fff',
+            marginBottom: '0.5em'
+        },
         width: 600,
         [theme.breakpoints.down('xl')]: {
             // width: '50%'
