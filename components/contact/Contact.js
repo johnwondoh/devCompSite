@@ -18,7 +18,7 @@ const Contact = props => {
     const baseClasses = useStylesBase()
     return (
         <ThemeProvider theme={theme}>
-        <Box className={classes.layout}>
+        <Box id='contactSection' className={classes.layout}>
             {/* <Box className='mainContainer'> */}
             <Box className={baseClasses.mainContainer}>
                 <Box className={classes.introContent}>

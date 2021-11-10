@@ -47,6 +47,7 @@ const Principles = props => {
     const baseClasses = useStylesBase()
     const { width, height } = useWindowDimension()
     const smallScreen = width < 600;
+    const mediumScreen = width < 900;
 
     const ourPrinciples = principles.map(p => <EachPrinciple id={p.id} title={p.title} description={p.description} key={p.id} />)
     return (
@@ -64,21 +65,26 @@ const Principles = props => {
                         alignItems="stretch"
                         justifyContent='left'
                         // alignItems="flex-start" 
-                        spacing={3}>
+                        spacing={3}
+                        
+                        >
                         {/* <Box className={classes.cardContainerBox}> */}
-                        <Grid item xs={12} sm={8} md={8} className={classes.gridItem} >
+                        <Grid item xs={12} sm={12} md={8} className={classes.gridItem} >
                             <Grid container
                                 alignItems="stretch"
                                 justifyContent='left'
                                 // alignItems="flex-start" 
-                                spacing={1}>
+                                // spacing={1}
+                                columnSpacing={smallScreen ? 0 : 5}
+                                rowSpacing={smallScreen ? 3 : 3}
+                                >
 
                                 {ourPrinciples}
                             </Grid>
                             {/* </Box> */}
                         </Grid>
-                        <Grid item xs={12} sm={4} md={4} className={classes.gridItem} >
-                            { !smallScreen && <Box className={classes.sideBox}>
+                        <Grid item xs={12} sm={12} md={4} className={classes.gridItem} >
+                            { !mediumScreen && <Box className={classes.sideBox}>
                                 <img alt='collaboration image' src='/people.png'
                                     className={classes.collabImage} />
                             </Box>}

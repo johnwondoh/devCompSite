@@ -14,8 +14,8 @@ const EachPrinciple = props => {
     const { id, title, description } = props
     return (
         <ThemeProvider theme={theme}>
-            <Grid item xs={12} sm={6} md={6} className={classes.gridItem} >
-                <Card className={classes.cardRoot} elevation={0}>
+            <Grid item xs={12} sm={6} md={6} className={classes.gridItemElement} >
+                <Card className={classes.cardRoot} raised>
                     <CardContent className={classes.cardContent}>
                         <Typography variant='h6' component='h6'> {title}</Typography>
                         <Typography variant='body2' component='p'>

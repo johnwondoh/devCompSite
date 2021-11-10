@@ -30,8 +30,14 @@ const principlesStyles = theme => ({
         width: '60%'
     },
     gridItem: {backgroundColor: 'transparent'},
+    gridItemElement: {
+        display: 'flex',
+        justifyContent: 'center',
+        backgroundColor: 'transparent'
+    },
     cardRoot: {
         // padding: 0,
+        maxWidth: 400,
         backgroundColor: 'transparent',
         height: '100%',
         '& h6': {
@@ -55,7 +61,7 @@ const principlesStyles = theme => ({
             // fontSize: '1em',
             padding: 5,
             paddingLeft: 10,
-            backgroundColor: 'rgba(25,58,75, 0.1)',
+            // backgroundColor: 'rgba(25,58,75, 0.1)',
             // border: '1px solid green',
             paddingTop:10,
             paddingBottom: 10,

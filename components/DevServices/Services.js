@@ -100,8 +100,9 @@ const Services = props => {
                         alignItems="stretch"
                         // justifyContent='center'
                         // alignItems="flex-start" 
-                        spacing={1}
-                    // columnSpacing={1}
+                        // spacing={5}
+                    columnSpacing={ smallScreen? 0 : 2}
+                    rowSpacing={2}
                     >
                         {allServices}
                     </Grid>

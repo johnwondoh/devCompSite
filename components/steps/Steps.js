@@ -75,15 +75,15 @@ const Steps = props => {
                         alignItems="stretch"
                         justifyContent='left'
                         spacing={0}>
-                        <Grid item xs={12} sm={12} md={2} className={classes.gridItem}></Grid>
-                        <Grid item xs={12} sm={12} md={5} className={classes.gridItem} >
+                        <Grid item xs={12} sm={12} md={1} className={classes.gridItem}></Grid>
+                        <Grid item xs={12} sm={7} md={6} className={classes.gridItem} >
                             <Paper className={classes.cardsContainerBox} elevation={0}>
                                 <List>
                                     {stepCards}
                                 </List>
                             </Paper>
                         </Grid>
-                        <Grid item xs={12} sm={12} md={5} className={classes.gridItem} >
+                        <Grid item xs={12} sm={5} md={5} className={classes.gridItem} >
                             <Box className={classes.boxItem}>
                             </Box>
                         </Grid>

@@ -30,7 +30,9 @@ const stepStyles = theme => ({
         // backgroundColor: "#dce3dc",
         backgroundColor: "#000",
         backgroundImage: `rgb(10,83,108)`,
-        backgroundImage: `linear-gradient(0deg, rgba(10,83,108,0.8), rgba(10,83,108,0.8)), url(cyber-3400789_1920.jpg)`,
+        // backgroundImage: `linear-gradient(0deg, rgba(10,83,108,0.8), rgba(10,83,108,0.8)), url(cyber-3400789_1920.jpg)`,
+        // backgroundImage: `linear-gradient(0deg, rgba(25,58,75,0.8), rgba(25,58,75,0.8)), url(cyber-3400789_1920.jpg)`,
+        backgroundImage: `linear-gradient(0deg, rgba(0,0,0,0.7), rgba(25,58,75,1)), url(cyber-3400789_1920.jpg)`,
         
         // borderTop: '3px solid red',
         marginTop: '4em'
@@ -77,15 +79,18 @@ const stepStyles = theme => ({
         maxWidth: 500
     },
     listItem: {
+        maxWidth: 600,
         display: 'flex',
         alignItems: 'stretch',
         marginBottom: '1em'
     },
     avatarArea: {
-        // backgroundColor: 'rgba(25,58,75,0.9)',
+        backgroundColor: 'rgba(25,58,75,0.9)',
         // backgroundColor: 'rgba(5, 94, 2,1)',
-        backgroundColor: '#aaaaaa',
+        // backgroundColor: '#aaaaaa',
+        // backgroundColor: '#937047',
         // backgroundColor: 'rgb(25,58,75)',
+        border: '1px solid rgba(255, 255, 255, 0.7)',
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
@@ -103,6 +108,10 @@ const stepStyles = theme => ({
         padding: 5,
         paddingLeft: 10,
         borderRadius: 5,
+        // backgroundColor: 'rgb(25,58,75)',
+        // borderTop: '1px solid #fff',
+        // borderBottom: '1px solid #fff',
+        // borderRight: '1px solid #fff',
         '& h6': {color: 'white'},
         '& p': {color: '#aaaaaa'}
     },

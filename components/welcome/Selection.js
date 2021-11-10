@@ -25,6 +25,7 @@ const Selection = props => {
 
   const handleChange = (event) => {
     setCurrency(event.target.value);
+    // contactSection
   };
 
   return (
