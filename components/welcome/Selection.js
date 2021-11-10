@@ -33,7 +33,7 @@ const Selection = props => {
         fullWidth
         size='small'
         className={classes.optionField}
-        id="outlined-select-currency"
+        id="select_topic"
         select
         // label="Select"
         value={currency}

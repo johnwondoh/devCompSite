@@ -15,7 +15,7 @@ import { Box } from '@mui/system';
 import { Paper, Typography, Grid } from '@mui/material';
 
 
-const useStyles = makeStyles(landingStyles)
+const useStyles = makeStyles(landingStyles(theme))
 
 const Landing = props => {
     const classes = useStyles()
@@ -39,30 +39,34 @@ const Landing = props => {
                         <span> Intelligently engineered solutions </span>
                     </Typography>
                 </Box> */}
-                <Grid container
+                {/* <Grid container
                     alignItems="stretch"
                     justifyContent='center'
                     // alignItems="flex-start" 
                     spacing={0}>
-                    <Grid item xs={12} sm={12} md={8} className={classes.gridItem}>
-                        <Box className={classes.optionsLayout}>
+                    <Grid item xs={12} sm={12} md={8} className={classes.gridItem}> */}
+                    <Box className={classes.mainContainer}>
+                        <Box className={classes.mainContent}>
                             <Box className={classes.mainText}>
                                 <Typography variant='h1' component='h1' display="block">
                                     <strong>Beautifully</strong> designed products
                                     <span> <strong>Intelligently</strong> engineered solutions </span>
                                 </Typography>
                             </Box>
-                            <Typography>what do you want</Typography>
-                            <Selection />
+                            <Box className={classes.optionsLayout}>
+                                <Typography>what do you want</Typography>
+                                <Selection />
+                            </Box>
                         </Box>
-                    </Grid>
-                    <Grid item xs={12} sm={12} md={4} className={classes.gridItem}>
-                        <Box className={classes.imageBox}>
+                        </Box>
+                    {/* </Grid> */}
+                    {/* <Grid item xs={12} sm={12} md={4} className={classes.gridItem}> */}
+                        {/* <Box className={classes.imageBox}> */}
                             {/* <img src='maximalfocus.jpg' alt='' className={classes.image} /> */}
 
-                        </Box>
-                    </Grid>
-                </Grid>
+                        {/* </Box> */}
+                    {/* </Grid> */}
+                {/* </Grid> */}
             </div>
         </ThemeProvider >
     );

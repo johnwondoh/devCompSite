@@ -18,8 +18,10 @@ const landingStyles = theme => ({
         // backgroundSize: 'cover',
         // position: 'relative',
     },
-    gridItem: {padding: 0, width: '100%',
-    height: '100%',},
+    gridItem: {
+        padding: 0, width: '100%',
+        height: '100%',
+    },
     imageBox: {
         // width: '100%',
         // height: '100%',
@@ -36,31 +38,10 @@ const landingStyles = theme => ({
         // backgroundImage: "url('/work.jpg')",
         backgroundImage: "url('maximalfocus.jpg')",
         backgroundRepeat: 'no-repeat',
-        backgroundPosition: 'center', 
+        backgroundPosition: 'center',
         // backgroundImage: "url('/collabs.png')",
         backgroundSize: 'cover',
     },
-    // image: {
-    //     // width: '100%', 
-    //     height: '100vh',
-    //     padding: 0
-    // },
-    // layout: {
-    //     height: '80vh',
-    //     width: '100vw',
-    //     backgroundColor: 'rgb(18,60,64)',
-
-    //     backgroundImage: `rgb(10,83,108)`,
-    //     backgroundImage: `linear-gradient(0deg, rgba(10,83,108,0.8), rgba(10,83,108,0.8)), url(cyber-3400789_1920.jpg)`,
-    //     // backgroundImage: `linear-gradient(0deg, rgba(18,60,64,0.6), rgba(18,60,64,0.8)), url(tech-rings.svg)`,
-    //     // backgroundPosition: 'center',
-    //     backgroundSize: 'cover',
-    //     // backgroundSize: '50% 120%',
-    //     // backgroundPosition: '100% 100%',
-    //     backgroundRepeat: 'no-repeat',
-    //     // backgroundSize: 'cover',
-    //     // position: 'relative',
-    // },
     logo: {
         margin: 30,
         padding: 10,
@@ -70,14 +51,30 @@ const landingStyles = theme => ({
         borderTop: '3px solid #f49f1c',
         borderBottom: '3px solid #f49f1c',
         fontStyle: 'italic',
-        '& span': {display: 'block', fontStyle: 'normal'},
-        '& h2' : {}
+        '& span': { display: 'block', fontStyle: 'normal' },
+        '& h2': {}
+    },
+    mainContainer: {
+        display: 'flex',
+        justifyContent: 'center'
+    },
+    mainContent: {
+        // margin: 'auto auto',
+        // width: '100%',
+        // height: '100%',
+        // display: 'flex',
+        // flexDirection: 'column',
+        // flexWrap: 'nowrap',
+        // alignContent: 'center', 
+        // justifyContent: 'center'
+        display: 'inline-block',
+        margin: 'auto auto'
     },
     mainText: {
         margin: 'auto auto',
         marginBottom: '4em',
         '& h1': {
-            color: '#fff', 
+            color: '#fff',
             // fontSize: '1.1em'
             // fontStyle: 'italic'
         },
@@ -86,11 +83,29 @@ const landingStyles = theme => ({
         //     fontStyle: 'normal',
         //     fontSize: '1.3em'
         // },
-        '& span': {display: 'block'}
+        '& span': { display: 'block' }
     },
     optionsLayout: {
-        margin: 'auto auto',
-        width: 600
+
+        width: 600,
+        [theme.breakpoints.down('xl')]: {
+            // width: '50%'
+            width: 600
+            // minWidth: 200
+        },
+        [theme.breakpoints.down('lg')]: {
+            // width: '50%'
+            // minWidth: 600
+            width: 600
+        },
+        [theme.breakpoints.down('md')]: {
+            // width: '50%'
+            width: 600
+        },
+        [theme.breakpoints.down('sm')]: {
+            width: '90%'
+            // minWidth: 600
+        },
         // backgroundColor: ''
     },
     optionField: {
@@ -103,10 +118,18 @@ const landingStyles = theme => ({
         height: '44px',
         marginTop: '0.8em',
         display: 'flex',
-        justifyContent: 'right'
+        justifyContent: 'right',
+        [theme.breakpoints.down('sm')]: {
+            justifyContent: 'center',
+            // minWidth: 600
+        },
     },
     button: {
         width: '40%',
+        [theme.breakpoints.down('sm')]: {
+            width: '90%'
+            // minWidth: 600
+        },
         borderRadius: 0,
         textTransform: "none",
         fontFamily: ['Noto Sans', 'sans-serif'],
