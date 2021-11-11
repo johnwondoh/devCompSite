@@ -11,7 +11,7 @@ import EngineeringIcon from '@mui/icons-material/Engineering';
 
 import serviceStyles from '../../assets/jss/serviceStyles';
 import baseStyles from '../../assets/jss/baseStyles';
-import { Avatar, Grid, Stack, Typography } from '@mui/material';
+import { Avatar, Divider, Grid, Stack, Typography } from '@mui/material';
 import { ThemeProvider } from '@emotion/react';
 import theme from '../../theme';
 import useWindowDimension from '../../assets/Hooks/useWindowDimension';
@@ -39,7 +39,7 @@ const services = [
 ]
 const dsProcess = [
     {
-        title: 'Websites & Applications',
+        title: 'Website & Application Development',
         subTitle: 'Data cleaning & preparation',
         content: 'We will process your raw data so that preliminary and advance analysis can be done on it.',
         src: 1,
@@ -154,6 +154,7 @@ const Services = props => {
 
                     </Grid>
                     {/* </Stack> */}
+                    <Divider variant='middle' className={classes.divider} />
                     <Box className={classes.educationBox}>
                         <EducationService />
                     </Box>

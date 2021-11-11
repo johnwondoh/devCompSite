@@ -223,7 +223,15 @@ const serviceStyles = theme => ({
 
     cardGridContainer: {
         margin: 'auto auto',
-        width: '80%'
+        width: '80%',
+        [theme.breakpoints.down('sm')]: {
+            width: '92%'
+        },
+    },
+    divider: {
+        color: 'white',
+        backgroundColor: 'white',
+        marginBottom: '2em'
     }
 })
 

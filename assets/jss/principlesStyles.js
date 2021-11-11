@@ -38,19 +38,23 @@ const principlesStyles = theme => ({
     cardRoot: {
         // padding: 0,
         maxWidth: 400,
-        backgroundColor: 'transparent',
+        // backgroundColor: 'transparent',
+        // backgroundColor: 'rgba(25,58,75, 1)',
+        backgroundColor: 'rgba(10,104,136, 1)',
         height: '100%',
         '& h6': {
-            backgroundColor: 'rgba(235,236,239,255)',
-            backgroundColor: 'rgba(25,58,75, 1)',
+            // backgroundColor: 'rgba(235,236,239,255)',
+            backgroundColor: 'rgba(25,58,75, 0.5)',
             color: '#fff',
             marginBottom: 0,
             // color: 'rgb(252,132,28)',
             // color: 'rgb(256,108,56)',
             padding: 5,
             paddingLeft: 10,
-            paddingTop:10,
-            paddingBottom: 10
+            // paddingTop:10,
+            paddingBottom: '1em',
+            paddingTop: '1em',
+            borderBottom: '3px solid white'
             // marginBottom: '0.5em'
         },
         '& strong': {
@@ -63,7 +67,10 @@ const principlesStyles = theme => ({
             paddingLeft: 10,
             // backgroundColor: 'rgba(25,58,75, 0.1)',
             // border: '1px solid green',
-            paddingTop:10,
+            // color: 'rgba(255, 255, 255, 0.7)',
+            color: '#aaaaaa',
+            color: 'rgba(215, 215, 217, 1)',
+            paddingTop:'1em',
             paddingBottom: 10,
             borderRadius: 5,
             borderTopLeftRadius: 0,

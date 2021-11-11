@@ -2,6 +2,9 @@
 const landingStyles = theme => ({
     layout: {
         height: '80vh',
+        [theme.breakpoints.down('sm')]: {
+            height: '100vh',
+        },
         width: '100vw',
         backgroundColor: 'rgb(18,60,64)',
 
@@ -82,6 +85,9 @@ const landingStyles = theme => ({
         marginBottom: '4em',
         '& h1': {
             color: '#fff',
+            [theme.breakpoints.down('sm')]: {
+                fontSize: '1.8em'
+            },
             // fontSize: '1.1em'
             // fontStyle: 'italic'
         },
