@@ -91,34 +91,26 @@ const serviceStyles = theme => ({
         alignItems: 'stretch'
     },
     cardRoot: {
-        // display: 'flex',
-        // flexDirection: 'row',
-        // flexWrap: 'nowrap',
         maxWidth: 400,
         minWidth: 250,
-        // border: '1px solid #f49f1c',
-        // border: '1px solid #fff',
-        // border: '1px solid #937047',
         border: '1px solid rgba(255, 255, 255, 0.5)',
         borderRadius: 25,
-        // margin: 16,
         display: "flex",
         flexDirection: 'row',
-        // flexDirection: "column",
         justifyContent: "space-between",
         height: '100%',
-        // backgroundColor: 'rgba(25,58,75,0.5)',
-        // backgroundColor: '#ebebde',
-        // backgroundColor: '#4F6272',
-        // backgroundColor: '#006C67',
         backgroundColor: 'rgba(25,58,75, 1)',
-        // boxShadow: 'rgba(255, 255, 255, 0.5) 0px 2px 8px 0px',
-        // boxShadow: `rgba(255, 255, 255, 0.25) 0px 54px 55px, 
-        //     rgba(255, 255, 255, 0.12) 0px -12px 30px, rgba(255, 255, 255, 0.12) 0px 4px 6px, 
-        //     rgba(255, 255, 255, 0.17) 0px 12px 13px, rgba(255, 255, 255, 0.09) 0px -3px 5px`
-        // backgroundColor: 'rgba(255,255,255, 0.1)',
-        // backgroundColor: 'rgba(0,0,0, 0.1)',
-        // backgroundColor: '#303c5d        ',
+    },
+    cardRootEducation: {
+        maxWidth: 600,
+        minWidth: 250,
+        border: '1px solid rgba(255, 255, 255, 0.5)',
+        borderRadius: 25,
+        display: "flex",
+        flexDirection: 'row',
+        justifyContent: "space-between",
+        height: '100%',
+        backgroundColor: 'rgba(25,58,75, 1)',
     },
     iconContainer: {
         // border: '1px solid red',
@@ -173,7 +165,10 @@ const serviceStyles = theme => ({
         // border: '3px solid lightseagreen',
         marginRight: 5
     },
-
+    educationBox: {
+        display: 'flex',
+        justifyContent: 'center'
+    },
     hexIconBox: {
         fontSize: 30
     },

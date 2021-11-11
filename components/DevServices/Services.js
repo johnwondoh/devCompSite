@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 
 import EachService from './EachService';
+import ProcessService from './ProcessService';
+import EducationService from './EducationService';
 import { Box } from '@mui/system';
 import { makeStyles } from '@mui/styles';
 import { BsHexagon, BsHexagonFill } from 'react-icons/bs'
@@ -35,7 +37,47 @@ const services = [
         id: 3
     }
 ]
-
+const dsProcess = [
+    {
+        title: 'Websites & Applications',
+        subTitle: 'Data cleaning & preparation',
+        content: 'We will process your raw data so that preliminary and advance analysis can be done on it.',
+        src: 1,
+        imgSrc: 'dev4.png'
+    },
+    // { 
+    //   title: 'Data pre-processing',
+    //   content: 'We will process your raw data so that preliminary and advance analysis can be done on it.',
+    //   src: 1,
+    //   imgSrc: 'preprocessing.jpeg'
+    // },
+    // {
+    //   title: 'Visualisation & data exploration', 
+    //   content: 'We will use your data to better inform you by presenting it to you and your users in a meaningful way. We will uncover previously unknown truths about your data by exploring and using advanced visualisation techniques.', 
+    //   src: 2,
+    //   imgSrc: 'preprocessing.jpeg'
+    // },
+    {
+        title: 'Data exploration & Visualisation',
+        subTitle: 'Data cleaning & preparation',
+        content: 'We will use your data to better inform you by presenting it to you and your users in a meaningful way. We will uncover previously unknown truths about your data by exploring and using advanced visualisation techniques.',
+        src: 2,
+        imgSrc: 'data_science.png'
+    },
+    {
+        title: 'Machine learning & Decision support',
+        subTitle: 'Artificial intelligence, Expert systems',
+        content: 'We will use machine learning models to discover previously unknown patterns in your data, predict future behaviours of your users and systems, understand causality and the impact of change in your system, among others.',
+        src: 3,
+        imgSrc: 'preprocessing.jpeg'
+    }
+    // {
+    //   title: 'Decision support',
+    //   content: 'We will build models that can be used to either automatically make important decision within your system or application or inform important stakeholders during their decision-making process.',
+    //   src: 4,
+    //   imgSrc: 'preprocessing.jpeg'
+    // },
+]
 const Services = props => {
     // const [smallScreen, setSmallScreen] = useState(true)
     const { width, height } = useWindowDimension()
@@ -48,6 +90,9 @@ const Services = props => {
     const baseClasses = useStylesBase()
     const allServices = services.map(s => <EachService type={s.type}
         description={s.description} id={s.id} key={s.id} />)
+    const process = dsProcess.map(p => <ProcessService title={p.title}
+        subTitle={p.subTitle} content={p.content} src={p.imgSrc} key={p.src} />)
+
 
     return (
         <ThemeProvider theme={theme}>
@@ -84,7 +129,7 @@ const Services = props => {
                             </Grid>
                             <Grid item xs={12} sm={4} md={4} className={classes.gridItem}>
                                 <Box className={baseClasses.headerImgBox}>
-                                <img className={baseClasses.headerImg} src='/development.png' />
+                                    <img className={baseClasses.headerImg} src='/development.png' />
                                 </Box>
                             </Grid>
                         </Grid>
@@ -101,12 +146,17 @@ const Services = props => {
                         // justifyContent='center'
                         // alignItems="flex-start" 
                         // spacing={5}
-                    columnSpacing={ smallScreen? 0 : 2}
-                    rowSpacing={2}
+                        columnSpacing={smallScreen ? 0 : 2}
+                        rowSpacing={2}
                     >
-                        {allServices}
+                        {/* {allServices} */}
+                        {process}
+
                     </Grid>
                     {/* </Stack> */}
+                    <Box className={classes.educationBox}>
+                        <EducationService />
+                    </Box>
                 </Box>
 
                 {/* Our promise to you is simple, we are passionate about help you in the digital world, and
