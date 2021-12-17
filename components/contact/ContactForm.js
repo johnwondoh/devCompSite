@@ -1,12 +1,16 @@
-import React, { useState } from 'react';
+import React, { useContext, useReducer, useState } from 'react';
 import PropTypes from 'prop-types';
-import { Paper, Grid, TextField, FormControl, InputLabel, Select, MenuItem, Button } from '@mui/material';
+import { Paper, Grid, TextField, FormControl, InputLabel, Select, MenuItem, Button, Alert } from '@mui/material';
 import { makeStyles } from '@mui/styles';
 // import { ThemeProvider } from '@mui/private-theming';
 // import { createTheme } from '@mui/system';
 import { ThemeProvider } from '@mui/system';
 // import MuiTh
 // import Grid from '@mui/material/Grid';
+
+import ChatContext from '../../Data/ChatContext';
+import { reducer, ACTIONS } from '../../Data/store';
+// import contact from '../../pages/api/contact';
 
 import contactStyles from '../../assets/jss/contactStyles';
 import theme from '../../theme';
@@ -17,54 +21,71 @@ const useStyles = makeStyles(contactStyles(theme))
 const ContactForm = props => {
     const classes = useStyles()
 
-    const [success, setSuccess] = useState(false)
+    const [state, dispatch] = useContext(ChatContext)
+    // console.log('printing the global state')
+    // console.log(state)
+
+    const [sent, setSent] = useState(null)
     const [data, setData] = useState({
-        name: '',
+        firstName: '',
+        lastName: '',
         email: '',
         phone: '',
-        company: '',
+        // company: '',
         enquiryType: '',
         enquiry: ''
     })
 
-    const handleChange = (e) => {
+    const handleChange = (e, topicSelect = null) => {
         const { name, value } = e.target
         setData({
             ...data,
             [name]: value
         })
+        if (topicSelect === 'chatTopic') {
+            const chatValue = e.target.value;
+            dispatch({ type: ACTIONS.UPDATE_SELECTED, payload: chatValue })
+            setData({ ...data, enquiryType: chatValue })
+        }
+        // console.log('printing data from form')
+        // console.log(data)
     }
 
-    // const formSubmit = (e) => {
-    //   e.preventDefault()
-    //   console.log(data)
-    // }
     const sendEmail = (e) => {
         e.preventDefault();
-        console.log(e.target)
 
-        const templateParams = {
-            from_name: data.name + " (" + data.email + ") and (" + data.phone + ")",
-            to_name: 'johnwondoh@gmail.com',
-            message_html: data.enquiry
-        };
+        const enquirySelected = state.chatPoints.filter(eq => eq.value == [data.enquiryType])
+        const sendData = {
+            name: `${data.firstName} ${data.lastName}`,
+            email: data.email,
+            phone: data.phone,
+            topic: enquirySelected.length > 0 ? enquirySelected[0].label : 'No topic',
+            enquiry: data.enquiry
+        }
 
-        emailjs.send('gmail', 'template_T2w1yx1v', templateParams, 'user_NGECXC5mrzzRi4tQAUhzw')
-            .then((result) => {
-                console.log(result.text);
-                setSuccess(true)
+        fetch('/api/contact', {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json, text/plain, */*',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(sendData)
+        }).then(response => {
+            console.log(response)
+            console.log('okay')
+            if (response.status === 200) {
+                console.log(sent)
+                console.log('sent')
+                setSent(true)
+                console.log(sent)
                 resetForm()
-                setTimeout(() => {
-                    setSuccess(false);
-                }, 5000);
-            }, (error) => {
-                console.log(error.text);
-                setSuccess(true)
-                setTimeout(() => {
-                    setSuccess(false);
-                }, 5000);
-            });
+            }
+        }).catch((error) => {
+            console.error('Error:', error);
+          });
     }
+
+    
 
     const resetForm = (e) => {
         setData({
@@ -78,9 +99,16 @@ const ContactForm = props => {
         })
     }
 
+    const showAlert = (sentRes) => {
+        if (sentRes === true) {}
+        setTimeout(setSent(null), 3000)
+    }
+
     return (
         <ThemeProvider theme={theme}>
+             { sent === true && <Alert severity='success' variant='standard' color='secondary'>Your message was sent successfully</Alert> }
             <Box className={classes.container}>
+                
                 <form
                     // onSubmit={handleSubmit} 
                     noValidate className={classes.form}>
@@ -104,7 +132,7 @@ const ContactForm = props => {
                                     size="small"
                                     type='text'
                                     // onChange={changeName}
-                                    name="name"
+                                    name="firstName"
                                     value={data.firstName}
                                     onChange={handleChange}
                                 />
@@ -174,28 +202,8 @@ const ContactForm = props => {
                                     onChange={handleChange}
                                 />
                             </Grid>
-                            {/* <Grid item xs={12} sm={6}>
-                    <TextField
-                      // required
-                      className={classes.fieldStyle}
-                      id="filled-required"
-                    //   variant="standard"
-                    variant="filled"
-                      fullWidth
-                      label="Company name"
-                      InputLabelProps={{
-                        className: classes.labelStyle,
-                      }}
-                      InputProps={{ disableUnderline: true }}
-                      size="small"
-                      type='text'
-                      name='company'
-                      value={data.company}
-                      onChange={handleChange}
-                    />
-                  </Grid> */}
                             <Grid item xs={12}>
-                                <FormControl
+                                {/* <FormControl
                                     className={classes.formControl}
                                     variant="filled"
                                 // variant='outlined'
@@ -208,15 +216,36 @@ const ContactForm = props => {
                                         labelId="demo-simple-select-label"
                                         id="demo-simple-select"
                                         name='enquiryType'
-                                        value={data.enquiryType}
+                                        // value={state.selectedValue}
+                                        value={state.selectedValue}
                                         onChange={handleChange}
                                     >
-                                        <MenuItem value={10}>General</MenuItem>
-                                        <MenuItem value={20}>Let's discuss your idea</MenuItem>
-                                        <MenuItem value={30}>Improve your product</MenuItem>
-                                        <MenuItem value={40}>Data and business analysis</MenuItem>
+                                        {state.chatPoints.map(c => 
+                                        <MenuItem value={c.value} key={c.value}>{c.label}</MenuItem>)}
                                     </Select>
-                                </FormControl>
+                                </FormControl> */}
+                                <TextField
+                                    fullWidth
+                                    size='small'
+                                    className={classes.fieldStyle}
+                                    id="select_topic"
+                                    select
+                                    // label="Select"
+                                    value={state.selectedValue}
+                                    onChange={(e) => handleChange(e, 'chatTopic')}
+                                // helperText="Please select your currency"
+                                >
+                                    {state.chatPoints.map(c => (
+                                        <MenuItem key={c.value} value={c.value}>
+                                            {c.label}
+                                        </MenuItem>
+                                    ))}
+                                    {/* {currencies.map((option) => (
+          <MenuItem key={option.value} value={option.value}>
+            {option.label}
+          </MenuItem>
+        ))} */}
+                                </TextField>
                             </Grid>
                             <Grid item xs={12}>
                                 <TextField
@@ -254,7 +283,7 @@ const ContactForm = props => {
                             </Grid> */}
                             <Grid item xs={12} style={{ marginTop: 16 }} alignContent='flex-end'>
                                 <Box className={classes.buttonBox}>
-                                    <Button alignItems='left'
+                                    <Button // alignItems='left'
                                         variant="contained"
                                         color="primary"
                                         type="submit"

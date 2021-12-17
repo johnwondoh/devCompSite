@@ -27,13 +27,13 @@ const footerStyles = theme => ({
         color: 'white',
         '& p': {color: 'white'},
         [theme.breakpoints.down('lg')]: {
-            width: '60%'
-          },
-        [theme.breakpoints.down('md')]: {
             width: '75%'
           },
+        [theme.breakpoints.down('md')]: {
+            width: '85%'
+          },
         [theme.breakpoints.down('sm')]: {
-            width: '80%'
+            width: '90%'
           },
           [theme.breakpoints.down('xs')]: {
             width: '95%'

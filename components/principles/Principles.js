@@ -49,7 +49,8 @@ const Principles = props => {
     const smallScreen = width < 600;
     const mediumScreen = width < 900;
 
-    const ourPrinciples = principles.map(p => <EachPrinciple id={p.id} title={p.title} description={p.description} key={p.id} />)
+    const ourPrinciples = principles.map(p => 
+    <EachPrinciple id={p.id} title={p.title} description={p.description} key={p.id} />)
     return (
         <ThemeProvider theme={theme}>
             <Box className={classes.layout}>

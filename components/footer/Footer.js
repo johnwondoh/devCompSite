@@ -46,7 +46,8 @@ const services = [
 
 const Footer = props => {
     const classes = useStyles()
-    const ourProvisions = services.map(s => <FooterService type={s.type} provisions={s.provisions} />)
+    const ourProvisions = services.map((s, i) => 
+    <FooterService type={s.type} provisions={s.provisions} key={i+1} />)
     return (
         // <Box className={classes.layout}>
         //     footer

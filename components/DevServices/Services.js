@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { Fragment, useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 
 import EachService from './EachService';
@@ -45,38 +45,38 @@ const dsProcess = [
         src: 1,
         imgSrc: 'dev4.png'
     },
-    // { 
-    //   title: 'Data pre-processing',
-    //   content: 'We will process your raw data so that preliminary and advance analysis can be done on it.',
-    //   src: 1,
-    //   imgSrc: 'preprocessing.jpeg'
-    // },
-    // {
-    //   title: 'Visualisation & data exploration', 
-    //   content: 'We will use your data to better inform you by presenting it to you and your users in a meaningful way. We will uncover previously unknown truths about your data by exploring and using advanced visualisation techniques.', 
-    //   src: 2,
-    //   imgSrc: 'preprocessing.jpeg'
-    // },
     {
-        title: 'Data exploration & Visualisation',
+        title: 'Data analysis & Machine Learning',
         subTitle: 'Data cleaning & preparation',
-        content: 'We will use your data to better inform you by presenting it to you and your users in a meaningful way. We will uncover previously unknown truths about your data by exploring and using advanced visualisation techniques.',
+        content: <Fragment>
+            'We will use your data to better inform you by presenting it 
+            to you and your users in a meaningful way. We will uncover previously 
+            unknown truths about your data by exploring and using advanced visualisation techniques.
+            {/* from machine learning and decision support */}
+            We will use machine learning models to discover previously unknown patterns in your data, 
+            predict future behaviours of your users and systems, understand causality and the impact of 
+            change in your system, among others.
+        </Fragment>,
         src: 2,
         imgSrc: 'data_science.png'
     },
-    {
-        title: 'Machine learning & Decision support',
-        subTitle: 'Artificial intelligence, Expert systems',
-        content: 'We will use machine learning models to discover previously unknown patterns in your data, predict future behaviours of your users and systems, understand causality and the impact of change in your system, among others.',
-        src: 3,
-        imgSrc: 'preprocessing.jpeg'
-    }
     // {
-    //   title: 'Decision support',
-    //   content: 'We will build models that can be used to either automatically make important decision within your system or application or inform important stakeholders during their decision-making process.',
-    //   src: 4,
-    //   imgSrc: 'preprocessing.jpeg'
+    //     title: 'Machine learning & Decision support',
+    //     subTitle: 'Artificial intelligence, Expert systems',
+    //     content: 'We will use machine learning models to discover previously unknown patterns in your data, predict future behaviours of your users and systems, understand causality and the impact of change in your system, among others.',
+    //     src: 3,
+    //     imgSrc: 'preprocessing.jpeg'
     // },
+    {
+        title: 'Education & Training',
+        subTitle: 'Artificial intelligence, Expert systems',
+        content: <Fragment>
+            our data, predict future behaviours of your users and systems, understand causality and 
+            the impact of change in your system, among others.
+        </Fragment>,
+        src: 3,
+        imgSrc: 'Meeting04.jpg'
+    }
 ]
 const Services = props => {
     // const [smallScreen, setSmallScreen] = useState(true)
@@ -154,10 +154,10 @@ const Services = props => {
 
                     </Grid>
                     {/* </Stack> */}
-                    <Divider variant='middle' className={classes.divider} />
+                    {/* <Divider variant='middle' className={classes.divider} />
                     <Box className={classes.educationBox}>
                         <EducationService />
-                    </Box>
+                    </Box> */}
                 </Box>
 
                 {/* Our promise to you is simple, we are passionate about help you in the digital world, and

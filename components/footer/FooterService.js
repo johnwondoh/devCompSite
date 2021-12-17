@@ -18,9 +18,10 @@ const services = ['Programming basics',
 const FooterService = props => {
     const classes = useStyles()
 
-    const ourServices = props.provisions.map(s => <Typography
+    const ourServices = props.provisions.map((s, i) => <Typography
         variant='body1'
         align='left'
+        key={i+1}
         className={classes.serviceList}>{s}</Typography>)
 
     return (

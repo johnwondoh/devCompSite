@@ -24,11 +24,11 @@ const EachStep = props => {
         if (index === 1) {
             // console.log('true')
             return classes.avatarAreaColor1
-        } else { console.log('false - not equal') }
+        } // else { console.log('false - not equal') }
         if (index === 2) return classes.avatarAreaColor2
         if (index === 3) return classes.avatarAreaColor3
     }
-    console.log(getIconAreaColor[id])
+    // console.log(getIconAreaColor[id])
     return (
         <ThemeProvider theme={theme}>
             <ListItem className={classes.listItem}>
