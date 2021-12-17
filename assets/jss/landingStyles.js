@@ -48,6 +48,9 @@ const landingStyles = theme => ({
     logo: {
         margin: 30,
         padding: 10,
+        [theme.breakpoints.down('sm')]: {
+            padding: 2,
+        },
         display: 'inline-block',
         borderRadius: 0,
         backgroundColor: 'transparent',
@@ -106,7 +109,7 @@ const landingStyles = theme => ({
             // paddingBottom: '0.1em',
             padding: '0.1em',
             // border: '2px solid #f49f1c'
-            border: '1px solid #937047'
+            border: '2px solid #937047'
             // border: '1px solid #e7dac7'
         },
         '& span': { display: 'block', marginTop: '0.5em'}
@@ -133,7 +136,8 @@ const landingStyles = theme => ({
         },
         [theme.breakpoints.down('sm')]: {
             width: '90%',
-            margin: 'auto auto'
+            margin: 'auto auto',
+            marginTop: '2em'
             // minWidth: 600
         },
         // backgroundColor: ''
