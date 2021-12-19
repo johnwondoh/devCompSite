@@ -30,15 +30,15 @@ const principles = [
         description: <span>
             {/* Each project is divided into deliverables with specified deadlines and time intervals.  */}
             We are committed to
-            delivering <strong>on time</strong> and <strong>communicating efficiently</strong>
-            clearly with our clients during this process.</span>
+            delivering <strong>on time</strong> and <strong>communicating efficiently </strong>
+            and clearly with our clients during this process.</span>
     },
     {
         id: 3,
         title: 'Partnership',
         description: <span>
             Our partnership with our clients <strong>does not end</strong> after the requirements are satisfied,
-            we will <strong>continuously support</strong> them and their businesse if need be </span>
+            we will <strong>continuously support</strong> them and their businesse if need be. </span>
     }
 ]
 

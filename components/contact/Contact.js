@@ -25,7 +25,7 @@ const Contact = props => {
                     <Typography variant='h4' component='h4'>Let's talk</Typography>
                     <Box className={classes.underline}></Box>
                     <Typography variant='body1'>
-                        Get in touch with us by ...Leave your contact details and a short message and we'll get in touch
+                    Leave your contact details and a short message and we'll be in touch shortly. 
                     </Typography>
                 </Box>
                 {/* Dream your product, we'll help you to build it

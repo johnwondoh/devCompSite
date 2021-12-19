@@ -20,7 +20,7 @@ const contactStyles = theme => ({
         paddingBottom: '5em'
     },
     formBox: {
-        width: '90%',
+        width: '96%',
         margin: 'auto auto',
         marginTop: '2em',
         borderRadius: 10,

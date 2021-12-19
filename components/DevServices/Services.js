@@ -20,157 +20,166 @@ const useStyles = makeStyles(serviceStyles(theme))
 const useStylesBase = makeStyles(baseStyles(theme))
 
 const services = [
-    {
-        type: 'Websites & Apps',
-        description: `websites, webapp, mobile apps for all mobile platforms, 
+  {
+    type: 'Websites & Apps',
+    description: `websites, webapp, mobile apps for all mobile platforms, 
         desktop applications, a lot of information here - no really - its a lot, lol, not really`,
-        id: 1
-    },
-    {
-        type: 'Data analytics and AI',
-        description: `a lot of information here - no really - its a lot, lol, not really`,
-        id: 2
-    },
-    {
-        type: 'Education',
-        description: `a lot of information here - no really - its a lot, lol, not really`,
-        id: 3
-    }
+    id: 1
+  },
+  {
+    type: 'Data analytics and AI',
+    description: `a lot of information here - no really - its a lot, lol, not really`,
+    id: 2
+  },
+  {
+    type: 'Education',
+    description: `a lot of information here - no really - its a lot, lol, not really`,
+    id: 3
+  }
 ]
 const dsProcess = [
-    {
-        title: 'Website & Application Development',
-        subTitle: 'Data cleaning & preparation',
-        content: 'We will process your raw data so that preliminary and advance analysis can be done on it.',
-        src: 1,
-        imgSrc: 'dev4.png'
-    },
-    {
-        title: 'Data analysis & Machine Learning',
-        subTitle: 'Data cleaning & preparation',
-        content: <Fragment>
-            'We will use your data to better inform you by presenting it 
-            to you and your users in a meaningful way. We will uncover previously 
-            unknown truths about your data by exploring and using advanced visualisation techniques.
-            {/* from machine learning and decision support */}
-            We will use machine learning models to discover previously unknown patterns in your data, 
-            predict future behaviours of your users and systems, understand causality and the impact of 
-            change in your system, among others.
-        </Fragment>,
-        src: 2,
-        imgSrc: 'data_science.png'
-    },
-    // {
-    //     title: 'Machine learning & Decision support',
-    //     subTitle: 'Artificial intelligence, Expert systems',
-    //     content: 'We will use machine learning models to discover previously unknown patterns in your data, predict future behaviours of your users and systems, understand causality and the impact of change in your system, among others.',
-    //     src: 3,
-    //     imgSrc: 'preprocessing.jpeg'
-    // },
-    {
-        title: 'Education & Training',
-        subTitle: 'Artificial intelligence, Expert systems',
-        content: <Fragment>
-            our data, predict future behaviours of your users and systems, understand causality and 
-            the impact of change in your system, among others.
-        </Fragment>,
-        src: 3,
-        imgSrc: 'Meeting04.jpg'
-    }
+  {
+    title: 'Website & App Development',
+    subTitle: 'Applications for all Platforms',
+    content: <Fragment>
+      Our developers have expertise in designing, prototyping, implementing, 
+      testing and deploying applications for all platforms - including the 
+      Web, Mobile (IOS, Android), and Computers (Mac OS, Windows). We develop 
+      apps of varying complexity based on our client's requirements - from 
+      simple blogs to eCommerce platforms. 
+    </Fragment>,
+    src: 1,
+    imgSrc: 'dev4.png'
+  },
+  {
+    title: 'Data analysis & Machine Learning',
+    subTitle: 'Artificial intelligence, Expert systems',
+    content: <Fragment>
+      We will use cutting edge state-of-the-art machine learning models to discover 
+      previously unknown patterns in your data, predict future behaviours of your 
+      users and systems, understand causality and the impact of change in your system, 
+      among others.
+    </Fragment>,
+    src: 2,
+    imgSrc: 'data_science.png'
+  },
+  {
+    title: 'Education & Training',
+    subTitle: 'Knowledge and skill acquisition',
+    content: <Fragment>
+      We provide training to help you manage your existing digital products or 
+      build new ones. Our trainers are experts within their fields and have 
+      taught students and industry experts at respected Australian universities. 
+      We teach programming fundaments, application development, data analysis and 
+      machine learning.
+    </Fragment>,
+    src: 3,
+    imgSrc: 'Meeting04.jpg'
+  }
 ]
 const Services = props => {
-    // const [smallScreen, setSmallScreen] = useState(true)
-    const { width, height } = useWindowDimension()
-    const smallScreen = width < 720;
-    // useEffect(() => {
-    //     window.addEventListener('resize', handleResize)
-    // }, [])
+  // const [smallScreen, setSmallScreen] = useState(true)
+  const { width, height } = useWindowDimension()
+  const smallScreen = width < 720;
+  // useEffect(() => {
+  //     window.addEventListener('resize', handleResize)
+  // }, [])
 
-    const classes = useStyles()
-    const baseClasses = useStylesBase()
-    const allServices = services.map(s => <EachService type={s.type}
-        description={s.description} id={s.id} key={s.id} />)
-    const process = dsProcess.map(p => <ProcessService title={p.title}
-        subTitle={p.subTitle} content={p.content} src={p.imgSrc} key={p.src} />)
+  const classes = useStyles()
+  const baseClasses = useStylesBase()
+  const allServices = services.map(s => <EachService type={s.type}
+    description={s.description} id={s.id} key={s.id} />)
+  const process = dsProcess.map(p => <ProcessService title={p.title}
+    subTitle={p.subTitle} content={p.content} src={p.imgSrc} key={p.src} />)
 
 
-    return (
-        <ThemeProvider theme={theme}>
-            <Box className={classes.layout}>
-                <Box className={baseClasses.mainContainer}>
-                    <Box className={classes.headerContent}>
-                        {/* <Stack direction='row' alignContent='center' 
+  return (
+    <ThemeProvider theme={theme}>
+      <Box className={classes.layout}>
+        <Box className={baseClasses.mainContainer}>
+          <Box className={classes.headerContent}>
+            {/* <Stack direction='row' alignContent='center' 
                         alignItems='baseline' justifyContent='Left' spacing={3}> */}
 
-                        <Typography variant='h4' component='h4'>
-                            We engineer digital solutions with passion
-                        </Typography>
-                        <Box className={classes.underline}></Box>
-                        {/* <Avatar>
+            <Typography variant='h4' component='h4'>
+              We engineer digital solutions with passion
+            </Typography>
+            <Box className={classes.underline}></Box>
+            {/* <Avatar>
                                 <EngineeringIcon />
                             </Avatar>
                         </Stack> */}
-                        <Grid container
-                            alignItems="flex-start"
-                            justifyContent='center'
-                            direction={smallScreen ? 'column-reverse' : 'row'}
-                            // alignItems="flex-start" 
-                            spacing={5}>
-                            <Grid item xs={12} sm={8} md={8} className={classes.gridItem}>
-                                <Typography variant='body1' component='p' className={['headerParagraph', classes.mainParagraph].join(' ')}>
-                                    We are a team of Full-Stack Engineers and Data Scientist that are passionate about building
+            <Grid container
+              alignItems="flex-start"
+              justifyContent='center'
+              direction={smallScreen ? 'column-reverse' : 'row'}
+              // alignItems="flex-start" 
+              spacing={5}>
+              <Grid item xs={12} sm={8} md={8} className={classes.gridItem}>
+                <Typography variant='body1' component='p'
+                  className={['headerParagraph', classes.mainParagraph].join(' ')}>
+
+                  We are a team of Full-Stack Developers and Data Scientists that are passionate
+                  about building digital solutions for our clients. <br/> <br/>
+                  
+                  Our commitment is to our clients and their digital needs. <br/> <br/> 
+                  
+                  Our design principle is to collaborate effectively with our clients 
+                  to design the perfect solution that is user-friendly and perfectly satisfies their 
+                  requirements. Our three main areas of expertise are as follows discussed below.
+                  {/* We are a team of Full-Stack Engineers and Data Scientist that are passionate about building
                                     digital solutions for our clients. Our design principle is to collaborate effectively
                                     with our clients to design the perfect solution that is user-friendly and perfectly
-                                    satisfies their requirements. Our three main areas of expectise are as follows:
+                                    satisfies their requirements. Our three main areas of expectise are as follows: */}
 
-                                    {/* We build and design solutions that are suitable for your specific situation. */}
-                                    {/* Our focus is ... three main domains */}
-                                </Typography>
-                            </Grid>
-                            <Grid item xs={12} sm={4} md={4} className={classes.gridItem}>
-                                <Box className={baseClasses.headerImgBox}>
-                                    <img className={baseClasses.headerImg} src='/development.png' />
-                                </Box>
-                            </Grid>
-                        </Grid>
-                    </Box>
+                  {/* We build and design solutions that are suitable for your specific situation. */}
+                  {/* Our focus is ... three main domains */}
+                </Typography>
+              </Grid>
+              <Grid item xs={12} sm={4} md={4} className={classes.gridItem}>
+                <Box className={baseClasses.headerImgBox}>
+                  <img className={baseClasses.headerImg} src='/development.png' />
                 </Box>
+              </Grid>
+            </Grid>
+          </Box>
+        </Box>
 
-                {/* some stack [interesting stuff] */}
-                {/* <EachService /> */}
+        {/* some stack [interesting stuff] */}
+        {/* <EachService /> */}
 
-                <Box className={classes.cardContainer}>
-                    {/* <Stack direction="row" justifyContent="space-between" > */}
-                    <Grid container className={classes.cardGridContainer}
-                        alignItems="stretch"
-                        // justifyContent='center'
-                        // alignItems="flex-start" 
-                        // spacing={5}
-                        columnSpacing={smallScreen ? 0 : 2}
-                        rowSpacing={2}
-                    >
-                        {/* {allServices} */}
-                        {process}
+        <Box className={classes.cardContainer}>
+          {/* <Stack direction="row" justifyContent="space-between" > */}
+          <Grid container className={classes.cardGridContainer}
+            alignItems="stretch"
+            // justifyContent='center'
+            // alignItems="flex-start" 
+            // spacing={5}
+            columnSpacing={smallScreen ? 0 : 2}
+            rowSpacing={2}
+          >
+            {/* {allServices} */}
+            {process}
 
-                    </Grid>
-                    {/* </Stack> */}
-                    {/* <Divider variant='middle' className={classes.divider} />
+          </Grid>
+          {/* </Stack> */}
+          {/* <Divider variant='middle' className={classes.divider} />
                     <Box className={classes.educationBox}>
                         <EducationService />
                     </Box> */}
-                </Box>
+        </Box>
 
-                {/* Our promise to you is simple, we are passionate about help you in the digital world, and
+        {/* Our promise to you is simple, we are passionate about help you in the digital world, and
                     our promise to you ...... dream
 
                     We are committed to delivering the best ....[use this one?]
 
                     problem solving, value driven, ..., communication */}
 
-                {/* </Box> */}
-            </Box>
-        </ThemeProvider>
-    );
+        {/* </Box> */}
+      </Box>
+    </ThemeProvider>
+  );
 };
 
 Services.propTypes = {

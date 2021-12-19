@@ -93,7 +93,7 @@ const Footer = props => {
 
                     <Box>
                         <Typography variant='body1' className={classes.abn}>
-                            ABN: 123236789
+                            ABN: 14 625 725 720
                         </Typography>
                     </Box>
                 </Box>
