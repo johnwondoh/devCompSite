@@ -58,7 +58,7 @@ const landingStyles = theme => ({
         borderBottom: '3px solid #f49f1c',
         fontStyle: 'italic',
         '& span': { display: 'block', fontStyle: 'normal' },
-        '& h2': {}
+        '& h2': {fontSize: '1.5em'}
     },
     mainContainer: {
         // height: '100%',
